@@ -1,7 +1,6 @@
-## Project Description
-Database - For The Win! 
+# Database - For The Win! 
 
-WebAPI 2.2 project with MS SQL and Oracle support for CRUD operations over HTTP GET and POST.
+* WebAPI 2.2 project with MS SQL and Oracle support for CRUD operations over HTTP GET and POST.
 
 * TXT file support for common SELECT queries.  Save a TXT file to the INETMGR folder (\dbftw\Sql, \dbftw\Oracle) and easily call with (http://.../dbftw/api/Sql/txt-file-name) 
 
