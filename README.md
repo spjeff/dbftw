@@ -8,6 +8,7 @@
 
 
 ## Get Started
+* ZIP file at <https://github.com/spjeff/dbftw/blob/master/dbftw/deploy/dbftw.zip>
 * Download ZIP and extract
 * Open SLN with Visual Studio 2013 or higher
 * Open "Package Manager Console" and run "Update-Package" to download assemblies
