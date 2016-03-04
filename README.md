@@ -3,9 +3,9 @@ Database - For The Win!
 
 WebAPI 2.2 project with MS SQL and Oracle support for CRUD operations over HTTP GET and POST.
 
-TXT file support for common SELECT queries.  Save a TXT file to the INETMGR folder (\dbftw\Sql, \dbftw\Oracle) and easily call with (http://.../dbftw/api/Sql/txt-file-name) 
+* TXT file support for common SELECT queries.  Save a TXT file to the INETMGR folder (\dbftw\Sql, \dbftw\Oracle) and easily call with (http://.../dbftw/api/Sql/txt-file-name) 
 
-Returns XML over HTTP by default for Excel Data Connection support (get XML from URL).  JSON available if HTTP header "accept:application/json" is sent with request.
+* Returns XML over HTTP by default for Excel Data Connection support (get XML from URL).  JSON available if HTTP header "accept:application/json" is sent with request.
 
 
 ## Get Started
