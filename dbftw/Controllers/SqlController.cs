@@ -41,30 +41,26 @@ namespace DbFtw.Controllers
 
             //parse TXT
             jsonDetail detail = new jsonDetail();
-            string server = fileContent[0];
-            string user = fileContent[1];
-            string pw = fileContent[2];
             string sql = "";
-            for (int i = 4; i < fileContent.Length; i++)
+            for (int i = 1; i < fileContent.Length; i++)
             {
                 sql += " " + fileContent[i];
             }
 
             //populate config object
-            string clearPw = Encoding.UTF8.GetString(Convert.FromBase64String(pw));
-            detail.connection = String.Format(fileContent[3], server, user, clearPw);
+            detail.connection = fileContent[0];
             detail.command = sql;
-            detail.isReadOnly = true;
+            detail.isTable = true;
 
             //run
-            return RunSQL(detail.connection, detail.command, detail.isReadOnly);
+            return RunSQL(detail.connection, detail.command, detail.isTable);
         }
 
         // POST api/values
         public DataTable Post([FromBody]jsonDetail detail)
         {
             //run
-            return RunSQL(detail.connection, detail.command, detail.isReadOnly);
+            return RunSQL(detail.connection, detail.command, detail.isTable);
         }
 
         // PUT api/values/5
@@ -94,11 +90,13 @@ namespace DbFtw.Controllers
             else
             {
                 //modify
+                conn.Open();
                 int rowsAffected = cmd.ExecuteNonQuery();
                 table.Columns.Add("rowsAffected");
                 DataRow row = table.NewRow();
                 row[0] = rowsAffected;
                 table.Rows.Add(row);
+                conn.Close();
             }
             return table;
         }

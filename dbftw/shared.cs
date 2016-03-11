@@ -9,7 +9,7 @@ namespace DbFtw
     {
         public string connection;
         public string command;
-        public bool isReadOnly;
+        public bool isTable;
     }
 
     public static class shared
